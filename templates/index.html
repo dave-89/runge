@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+  <b>Runge Kutta integrator</b> <br><br>
+
+  <p>Function:</p>
+  <div lang="latex">
+    \\\ddot{x}+a\dot{x}-x^2+b=0 \\
+    x(t_0) = x_0\\
+    \dot{x}(t_0) = \dot{x}_0\\
+  </div>
+
+  <span lang="latex">a</span>: <input id="aField" type="text">
+  <span lang="latex">b</span>: <input id="bField" type="text"> <br><br>
+  <span lang="latex">x_0</span>: <input id="x0Field" type="text">
+  <span lang="latex">\dot{x}_0</span>: <input id="p0Field" type="text"> <br><br>
+  <span lang="latex">t_0</span>: <input id="t0Field" type="text">
+  <span lang="latex">t_1</span>: <input id="t1Field" type="text">
+  <span lang="latex">dt</span>: <input id="dtField" type="text"> <br><br>
+
+  <button id="reloadButton">Reload</button>
+
+
+  <div class="image">
+  </div>
+
+  <p> Davide Bianchini - <i>bianchini.davide.89@gmail.com</i></p>
+
+
+<script type="text/javascript" src="https://latex.codecogs.com/latexit.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="scripts.js"></script>
+
+</body>
+</html>
