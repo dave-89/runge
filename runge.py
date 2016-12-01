@@ -34,6 +34,10 @@ def runge4(X,t,dt):
 
 app = Flask(__name__)
 
+@app.route('/api.html',methods = ['GET'])
+def api():
+  return render_template('api.html')
+
 @app.route('/',methods = ['GET'])
 def index():
     return render_template('index.html')
@@ -58,7 +62,7 @@ def plot():
     t0 = (float)(str(dataDict['t0Val']))
     t1 = (float)(str(dataDict['t1Val']))
     dt = (float)(str(dataDict['dtVal']))
-    if (t1-t0)/dt > 5000.0: 
+    if (t1-t0)/dt > 5000.0:
 	dt = (t1-t0)/5000.0
 
 
