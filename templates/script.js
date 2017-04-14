@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $('#reloadButton').click(function() {
 
-        var aDefault = '1.0';
+        var functionDefault = '-y';
         var bDefault = '1.0';
 
         var x0Default = '0.0';
@@ -12,7 +12,7 @@ $(document).ready(function() {
         var t1Default = '5.0';
         var dtDefault = '0.01';
 
-        var a = $('#aField').val();
+        var func = $('#functionField').val();
         var b = $('#bField').val();
 
         var x0 = $('#x0Field').val();
@@ -26,9 +26,9 @@ $(document).ready(function() {
 
 
 
-        if (a == '') {
-            $('#aField').val(aDefault);
-            a = aDefault;
+        if (func == '') {
+            $('#functionField').val(aDefault);
+            func = functionDefault;
         }
 
         if (b == '') {
@@ -69,7 +69,7 @@ $(document).ready(function() {
 
 
         var params = {
-            aVal: a,
+            functionVal: func,
             bVal: b,
             x0Val: x0,
             p0Val: p0,

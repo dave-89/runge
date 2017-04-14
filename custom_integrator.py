@@ -15,12 +15,12 @@ class Integrator(object):
     def setup(self):
         fx = stringToFunction(self.function)
         def f(t, y, args):
-            return [y[1],fx(y[0])]
+            return [y[1],fx(y[0],y[1])]
         self.r = ode(f).set_integrator('zvode', method='bdf', with_jacobian=False)
-        self.r.set_initial_value(y0, t0).set_f_params(0.)
+        self.r.set_initial_value(self.y0, self.t0).set_f_params(0.)
         
     def cleanUp(self,y):
-        return map(lambda yi: yi if yi.imag > eps else yi.real,
+        return map(lambda yi: yi if yi.imag > self.eps else yi.real,
                 map(lambda yi: yi[1],
                     filter(lambda (i,yi): i%2==0, enumerate(y))))
         
@@ -32,14 +32,15 @@ class Integrator(object):
         self.dt = dt
         self.y0 = y0
         self.method = method
+        self.eps=1.e-6
         self.setup()
     
     def integrate(self):
-        t = np.array(t0)
-        y = np.array(y0)
+        t = np.array(self.t0)
+        y = np.array(self.y0)
         r = self.r
-        while r.successful() and r.t < t1:
-            r.integrate(r.t+dt)
+        while r.successful() and r.t < self.t1:
+            r.integrate(r.t+self.dt)
             t = np.append(t,r.t)
             y = np.append(y,r.y)
         self.t = t
@@ -53,5 +54,5 @@ Usage:
 integrator=Integrator(dt=.1,t0=0.,t1=1.,y0=1.,function='-y')
 integrator.integrate()
 values=integrator.y
-''''
+'''
 
