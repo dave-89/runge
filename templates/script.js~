@@ -2,14 +2,14 @@ $(document).ready(function() {
 
     $('#reloadButton').click(function() {
 
-        var functionDefault = '-x-0.3*x1';
+        var functionDefault = '-x';
         var bDefault = '1.0';
 
         var x0Default = '1.0';
         var p0Default = '0.0';
 
         var t0Default = '0.0';
-        var t1Default = '30.0';
+        var t1Default = '5.0';
         var dtDefault = '0.01';
 
         var func = $('#functionField').val();
