@@ -1,1 +1,1 @@
-web: python runge.py --log-file
+web: python App.py --log-file
