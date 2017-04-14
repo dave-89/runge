@@ -2,19 +2,17 @@ $(document).ready(function() {
 
     $('#reloadButton').click(function() {
 
-        var aDefault = '1.0';
+        var functionDefault = '-x';
         var bDefault = '1.0';
 
-        var x0Default = '0.0';
-        var p0Default = '1.0';
+        var x0Default = '1.0';
+        var p0Default = '0.0';
 
         var t0Default = '0.0';
         var t1Default = '5.0';
         var dtDefault = '0.01';
 
-        var a = $('#aField').val();
-        var b = $('#bField').val();
-
+        var func = $('#functionField').val();
         var x0 = $('#x0Field').val();
         var p0 = $('#p0Field').val();
 
@@ -22,18 +20,9 @@ $(document).ready(function() {
         var t1 = $('#t1Field').val();
         var dt = $('#dtField').val();
 
-
-
-
-
-        if (a == '') {
-            $('#aField').val(aDefault);
-            a = aDefault;
-        }
-
-        if (b == '') {
-            $('#bField').val(bDefault);
-            b = bDefault;
+        if (func == '') {
+            $('#functionField').val(functionDefault);
+            func = functionDefault;
         }
 
         if (x0 == '') {
@@ -69,8 +58,7 @@ $(document).ready(function() {
 
 
         var params = {
-            aVal: a,
-            bVal: b,
+            functionVal: func,
             x0Val: x0,
             p0Val: p0,
             t0Val: t0,
