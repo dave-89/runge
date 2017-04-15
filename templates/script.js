@@ -81,7 +81,7 @@ $(document).ready(function() {
             error: function(xhr, ajaxOptions, thrownError) {
                 console.log(xhr.status);
                 console.log(thrownError);
-		alert("Status: " + xhr.status + " Error: " + thrownError);
+		alert("Please check the fields");
             }
         });
     });
