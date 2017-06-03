@@ -20,7 +20,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-cors = CORS(app, resources={r"/plot*": {"origins": "http://localhost:4000"}})
+cors = CORS(app, resources={r"/plot*": {"origins": "https://dave-89.github.io/"}})
 
 @app.route('/api.html',methods = ['GET'])
 def api():
