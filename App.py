@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[28]:
 
 import unicodedata
 import os
@@ -13,11 +13,14 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import StringIO
 from flask import Flask, make_response, request, render_template, current_app
 from custom_integrator import Integrator
+from flask_cors import CORS
 
 
-# In[2]:
+# In[35]:
 
 app = Flask(__name__)
+
+cors = CORS(app, resources={r"/plot*": {"origins": "http://localhost:4000"}})
 
 @app.route('/api.html',methods = ['GET'])
 def api():
@@ -64,7 +67,7 @@ def plot():
     return response
 
 
-# In[3]:
+# In[ ]:
 
 if __name__ == '__main__':
      port = int(os.environ.get("PORT", 5000))
